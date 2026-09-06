@@ -1,0 +1,38 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>屋根勾配・斜辺 計算 | crafT.K 現場計算</title>
+<meta name="description" content="寸勾配と水平距離から高さ、斜辺、角度を計算する無料ツール。">
+<meta name="theme-color" content="#101820">
+<link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "屋根勾配・斜辺 計算", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "description": "寸勾配と水平距離から高さ、斜辺、角度を計算する無料ツール。"}</script>
+
+</head><body>
+<header class="site-header"><div class="header-in">
+<a class="logo" href="/"><span>crafT.</span><span class="k">K</span> 現場計算</a>
+<nav class="nav">
+<a href="/">トップ</a><a href="/pro/">全部入りPRO</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a>
+</nav></div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">トップ</a> › 屋根勾配・斜辺 計算</div>
+<section class="hero"><h1>屋根勾配・斜辺 計算</h1><p>水平距離と寸勾配を入力してください。</p></section>
+<section class="card"><label>水平距離 mm<input id="r" type="number" inputmode="decimal"></label><label>勾配（寸）<input id="p" type="number" inputmode="decimal" placeholder="例 4"></label>
+<div class="result">高さ：<strong><span id="rise">0</span> mm</strong><br>斜辺：<strong><span id="slope">0</span> mm</strong><br>角度：<strong><span id="angle">0.00</span>°</strong></div></section>
+<div class="adbox"><b>この計算に関連する工具・材料</b><br><span class="small">アフィリエイトリンク掲載予定</span></div>
+<section class="card"><h2>使い方・注意</h2><p>軒の出、垂木の納まり、棟木・母屋等は別途考慮してください。</p></section>
+<footer>
+<a href="/about/">運営者情報</a>
+<a href="/privacy/">プライバシー</a>
+<a href="/disclaimer/">免責事項</a>
+<a href="/contact/">お問い合わせ</a><br>
+© crafT.K 現場計算
+</footer></div>
+<script>function f(){let r=+document.getElementById('r').value||0,p=+document.getElementById('p').value||0,q=p/10,h=r*q,s=Math.hypot(r,h),a=Math.atan(q)*180/Math.PI;
+document.getElementById('rise').textContent=Math.round(h);document.getElementById('slope').textContent=Math.round(s);document.getElementById('angle').textContent=a.toFixed(2);}['r','p'].forEach(id=>document.getElementById(id).addEventListener('input',f));</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(()=>{}));}
+</script>
+</body></html>

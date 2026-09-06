@@ -1,0 +1,40 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>クロス 面積計算 | crafT.K 現場計算</title>
+<meta name="description" content="部屋寸法と天井高から壁4面と天井のクロス面積を計算します。">
+<meta name="theme-color" content="#101820">
+<link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "クロス 面積計算", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "description": "部屋寸法と天井高から壁4面と天井のクロス面積を計算します。"}</script>
+
+</head><body>
+<header class="site-header"><div class="header-in">
+<a class="logo" href="/"><span>crafT.</span><span class="k">K</span> 現場計算</a>
+<nav class="nav">
+<a href="/">トップ</a><a href="/pro/">全部入りPRO</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a>
+</nav></div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">トップ</a> › クロス 面積計算</div>
+<section class="hero"><h1>クロス 面積計算</h1><p>開口部控除とロス率を入れて概算できます。</p></section>
+<section class="card"><div class="calc-grid"><div><label>部屋 長さ m<input id="l" type="number"></label></div><div><label>部屋 幅 m<input id="w" type="number"></label></div></div>
+<div class="calc-grid"><div><label>天井高 m<input id="h" type="number" value="2.4"></label></div><div><label>開口控除 ㎡<input id="d" type="number" value="0"></label></div></div>
+<label>ロス率 %<select id="loss"><option>0</option><option>5</option><option selected>10</option><option>15</option></select></label>
+<div class="result">壁：<strong><span id="wall">0.00</span>㎡</strong><br>天井：<strong><span id="ceil">0.00</span>㎡</strong><br>ロス込み合計：<strong><span id="total">0.00</span>㎡</strong></div></section>
+<div class="adbox"><b>この計算に関連する工具・材料</b><br><span class="small">アフィリエイトリンク掲載予定</span></div>
+<section class="card"><h2>使い方・注意</h2><p>柄合わせや下地状況、梁型・下がり壁等により必要量は変わります。</p></section>
+<footer>
+<a href="/about/">運営者情報</a>
+<a href="/privacy/">プライバシー</a>
+<a href="/disclaimer/">免責事項</a>
+<a href="/contact/">お問い合わせ</a><br>
+© crafT.K 現場計算
+</footer></div>
+<script>function f(){let l=+document.querySelector('#l').value||0,w=+document.querySelector('#w').value||0,h=+document.querySelector('#h').value||0,d=+document.querySelector('#d').value||0,loss=+document.querySelector('#loss').value||0;
+let wall=Math.max(0,2*(l+w)*h-d),ceil=l*w;document.querySelector('#wall').textContent=wall.toFixed(2);document.querySelector('#ceil').textContent=ceil.toFixed(2);document.querySelector('#total').textContent=((wall+ceil)*(1+loss/100)).toFixed(2);}['l','w','h','d','loss'].forEach(id=>{let e=document.getElementById(id);e.addEventListener('input',f);e.addEventListener('change',f)});f();</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(()=>{}));}
+</script>
+</body></html>

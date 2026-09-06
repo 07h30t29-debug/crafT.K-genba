@@ -1,0 +1,42 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>坪・㎡・畳 計算 | crafT.K 現場計算</title>
+<meta name="description" content="坪数・平米・畳数をスマホで相互変換できる無料計算ツール。">
+<meta name="theme-color" content="#101820">
+<link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "坪・㎡・畳 計算", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "description": "坪数・平米・畳数をスマホで相互変換できる無料計算ツール。"}</script>
+
+</head><body>
+<header class="site-header"><div class="header-in">
+<a class="logo" href="/"><span>crafT.</span><span class="k">K</span> 現場計算</a>
+<nav class="nav">
+<a href="/">トップ</a><a href="/pro/">全部入りPRO</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a>
+</nav></div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">トップ</a> › 坪・㎡・畳 計算</div>
+<section class="hero"><h1>坪・㎡・畳 計算</h1><p>坪・㎡・畳のどれか1つを入力すると、残りを自動で換算します。</p></section>
+<section class="card"><label>坪<input id="a" type="number" inputmode="decimal" step="0.01"></label>
+<label>㎡<input id="b" type="number" inputmode="decimal" step="0.01"></label>
+<label>畳<input id="c" type="number" inputmode="decimal" step="0.1"></label>
+<div class="result">基準：1坪 = 3.305785㎡ / 1畳 = 1.62㎡</div></section>
+<div class="adbox"><b>この計算に関連する工具・材料</b><br><span class="small">アフィリエイトリンク掲載予定</span></div>
+<section class="card"><h2>使い方・注意</h2><p>畳数は地域や表示基準によって差があります。本ツールは1畳=1.62㎡で計算しています。</p></section>
+<footer>
+<a href="/about/">運営者情報</a>
+<a href="/privacy/">プライバシー</a>
+<a href="/disclaimer/">免責事項</a>
+<a href="/contact/">お問い合わせ</a><br>
+© crafT.K 現場計算
+</footer></div>
+<script>let lock=false;const a=document.querySelector('#a'),b=document.querySelector('#b'),c=document.querySelector('#c');
+function f(src){if(lock)return;lock=true;let m=src===a?(+a.value||0)*3.305785:src===b?(+b.value||0):(+c.value||0)*1.62;
+if(src!==a)a.value=m?(m/3.305785).toFixed(2):'';if(src!==b)b.value=m?m.toFixed(2):'';if(src!==c)c.value=m?(m/1.62).toFixed(1):'';lock=false;}
+[a,b,c].forEach(x=>x.addEventListener('input',()=>f(x)));</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(()=>{}));}
+</script>
+</body></html>

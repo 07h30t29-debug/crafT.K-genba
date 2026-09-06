@@ -1,0 +1,45 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>合板 必要枚数計算 | crafT.K 現場計算</title>
+<meta name="description" content="施工面積と合板サイズ、ロス率から必要枚数を計算します。">
+<meta name="theme-color" content="#101820">
+<link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "合板 必要枚数計算", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "description": "施工面積と合板サイズ、ロス率から必要枚数を計算します。"}</script>
+
+</head><body>
+<header class="site-header"><div class="header-in">
+<a class="logo" href="/"><span>crafT.</span><span class="k">K</span> 現場計算</a>
+<nav class="nav">
+<a href="/">トップ</a><a href="/pro/">全部入りPRO</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a>
+</nav></div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">トップ</a> › 合板 必要枚数計算</div>
+<section class="hero"><h1>合板 必要枚数計算</h1><p>910×1820、910×2440、1000×2000に対応しています。</p></section>
+<section class="card"><label>施工面積 ㎡<input id="a" type="number" inputmode="decimal"></label>
+<label>合板サイズ<select id="s"><option value="910x1820">910×1820</option><option value="910x2440">910×2440</option><option value="1000x2000">1000×2000</option></select></label>
+<label>ロス率 %<select id="loss"><option>0</option><option>5</option><option selected>10</option><option>15</option></select></label>
+<div class="big-result"><small>必要枚数</small><strong><span id="o">0</span> 枚</strong></div></section>
+<section class="card affiliate-card"><h2>🔨 現場で使えるおすすめ工具</h2>
+<p><strong>マキタ 40Vmax TD005G</strong></p>
+<p class="small">楽天市場で価格や在庫をチェックできます。</p>
+<a class="btn" href="https://hb.afl.rakuten.co.jp/ichiba/573b9b80.eb147eed.573b9b81.0835e4ab/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdougu-souko%2Ftd005g%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener">楽天市場で商品を見る →</a>
+<p class="affiliate-disclosure">広告：当サイトは楽天アフィリエイトを利用しています。リンク経由の購入により運営者が報酬を受け取る場合があります。</p></section>
+<div class="adbox"><b>この計算に関連する工具・材料</b><br><span class="small">アフィリエイトリンク掲載予定</span></div>
+<section class="card"><h2>使い方・注意</h2><p>面積だけで算出した概算です。構造用合板等では張り方・継手・耐力壁の仕様を必ず図面で確認してください。</p></section>
+<footer>
+<a href="/about/">運営者情報</a>
+<a href="/privacy/">プライバシー</a>
+<a href="/disclaimer/">免責事項</a>
+<a href="/contact/">お問い合わせ</a><br>
+© crafT.K 現場計算
+</footer></div>
+<script>function f(){let a=+document.querySelector('#a').value||0,[w,h]=document.querySelector('#s').value.split('x').map(Number),loss=+document.querySelector('#loss').value||0;
+document.querySelector('#o').textContent=Math.ceil(a*(1+loss/100)/((w/1000)*(h/1000)));}['a','s','loss'].forEach(id=>{let e=document.getElementById(id);e.addEventListener('input',f);e.addEventListener('change',f)});f();</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(()=>{}));}
+</script>
+</body></html>

@@ -1,0 +1,41 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>mm・寸・尺・間 相互変換 | crafT.K 現場計算</title>
+<meta name="description" content="mm、寸、尺、間を相互変換できる大工向け尺寸計算ツール。">
+<meta name="theme-color" content="#101820">
+<link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "mm・寸・尺・間 相互変換", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "description": "mm、寸、尺、間を相互変換できる大工向け尺寸計算ツール。"}</script>
+
+</head><body>
+<header class="site-header"><div class="header-in">
+<a class="logo" href="/"><span>crafT.</span><span class="k">K</span> 現場計算</a>
+<nav class="nav">
+<a href="/">トップ</a><a href="/pro/">全部入りPRO</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a>
+</nav></div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">トップ</a> › mm・寸・尺・間 相互変換</div>
+<section class="hero"><h1>mm・寸・尺・間 相互変換</h1><p>どれか1つに入力すると残りを自動換算します。</p></section>
+<section class="card"><label>mm<input id="mm" type="number" inputmode="decimal"></label><label>寸<input id="sun" type="number" inputmode="decimal"></label>
+<label>尺<input id="shaku" type="number" inputmode="decimal"></label><label>間<input id="ken" type="number" inputmode="decimal"></label>
+<div class="result">1寸=30.303mm / 1尺=303.03mm / 1間=1818.18mm</div></section>
+<div class="adbox"><b>この計算に関連する工具・材料</b><br><span class="small">アフィリエイトリンク掲載予定</span></div>
+<section class="card"><h2>使い方・注意</h2><p>尺寸は慣用的な近似値で計算しています。現場の基準寸法を優先してください。</p></section>
+<footer>
+<a href="/about/">運営者情報</a>
+<a href="/privacy/">プライバシー</a>
+<a href="/disclaimer/">免責事項</a>
+<a href="/contact/">お問い合わせ</a><br>
+© crafT.K 現場計算
+</footer></div>
+<script>let lock=false;const els={mm:document.getElementById('mm'),sun:document.getElementById('sun'),shaku:document.getElementById('shaku'),ken:document.getElementById('ken')};
+function f(src){if(lock)return;lock=true;let mm=src==='mm'?(+els.mm.value||0):src==='sun'?(+els.sun.value||0)*30.303:src==='shaku'?(+els.shaku.value||0)*303.03:(+els.ken.value||0)*1818.18;
+if(src!=='mm')els.mm.value=mm?mm.toFixed(1):'';if(src!=='sun')els.sun.value=mm?(mm/30.303).toFixed(3):'';if(src!=='shaku')els.shaku.value=mm?(mm/303.03).toFixed(3):'';if(src!=='ken')els.ken.value=mm?(mm/1818.18).toFixed(3):'';lock=false;}
+Object.keys(els).forEach(k=>els[k].addEventListener('input',()=>f(k)));</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(()=>{}));}
+</script>
+</body></html>

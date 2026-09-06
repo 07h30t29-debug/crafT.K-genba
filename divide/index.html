@@ -1,0 +1,37 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>等分割付 計算 | crafT.K 現場計算</title>
+<meta name="description" content="全長を指定した数で等分する簡易割付計算ツール。">
+<meta name="theme-color" content="#101820">
+<link rel="stylesheet" href="/style.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "等分割付 計算", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "description": "全長を指定した数で等分する簡易割付計算ツール。"}</script>
+
+</head><body>
+<header class="site-header"><div class="header-in">
+<a class="logo" href="/"><span>crafT.</span><span class="k">K</span> 現場計算</a>
+<nav class="nav">
+<a href="/">トップ</a><a href="/pro/">全部入りPRO</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a>
+</nav></div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">トップ</a> › 等分割付 計算</div>
+<section class="hero"><h1>等分割付 計算</h1><p>全長と等分数を入力します。</p></section>
+<section class="card"><label>全長 mm<input id="l" type="number" inputmode="decimal"></label><label>等分数<input id="d" type="number" value="4" inputmode="numeric"></label>
+<div class="big-result"><small>1区画</small><strong><span id="o">0</span> mm</strong></div></section>
+<div class="adbox"><b>この計算に関連する工具・材料</b><br><span class="small">アフィリエイトリンク掲載予定</span></div>
+<section class="card"><h2>使い方・注意</h2><p>実際の割付では材料幅や目地幅、端部寸法を考慮してください。</p></section>
+<footer>
+<a href="/about/">運営者情報</a>
+<a href="/privacy/">プライバシー</a>
+<a href="/disclaimer/">免責事項</a>
+<a href="/contact/">お問い合わせ</a><br>
+© crafT.K 現場計算
+</footer></div>
+<script>function f(){let l=+document.getElementById('l').value||0,d=Math.max(1,Math.round(+document.getElementById('d').value||1));document.getElementById('o').textContent=(l/d).toFixed(1);}['l','d'].forEach(id=>document.getElementById(id).addEventListener('input',f));f();</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(()=>{}));}
+</script>
+</body></html>
