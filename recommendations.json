@@ -5,5 +5,12 @@
     "description": "楽天市場で価格や在庫をチェックできます。",
     "url": "https://hb.afl.rakuten.co.jp/",
     "button": "楽天市場で商品を見る →"
+  },
+  "floor": {
+    "title": "床材施工におすすめ",
+    "product": "マキタ 125mm 充電式マルノコ",
+    "description": "床材の切断や現場加工に使いやすい定番工具です。",
+    "url": "https://hb.afl.rakuten.co.jp/",
+    "button": "楽天市場で商品を見る →"
   }
 }
