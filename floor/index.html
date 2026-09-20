@@ -35,7 +35,27 @@
 </footer></div>
 <script>function f(){let a=+document.querySelector('#a').value||0,w=+document.querySelector('#w').value||0,l=+document.querySelector('#l').value||0,loss=+document.querySelector('#loss').value||0;
 let one=(w/1000)*(l/1000);document.querySelector('#o').textContent=one?Math.ceil(a*(1+loss/100)/one):0;}
-['a','w','l','loss'].forEach(id=>{let e=document.getElementById(id);e.addEventListener('input',f);e.addEventListener('change',f)});f();</script>
+['a','w','l','loss'].forEach(id=>{let e=document.getElementById(id);e.addEventListener('input',f);e.addEventListener('change',f)});f();</script><script>
+fetch('/recommendations.json')
+  .then(response => response.json())
+  .then(data => {
+    const item = data.floor;
+    document.getElementById('recommendation-card').innerHTML = `
+      <h2>🔨 ${item.title}</h2>
+      <p><strong>${item.product}</strong></p>
+      <p class="small">${item.description}</p>
+      <a class="btn" href="${item.url}" target="_blank" rel="nofollow sponsored noopener">
+        ${item.button}
+      </a>
+      <p class="affiliate-disclosure">
+        広告：当サイトは楽天アフィリエイトを利用しています。リンク経由の購入により運営者が報酬を受け取る場合があります。
+      </p>
+    `;
+  })
+  .catch(error => {
+    console.error('おすすめ商品の読み込みに失敗しました', error);
+  });
+</script>
 <script>
 if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/service-worker.js").catch(()=>{}));}
 </script>
